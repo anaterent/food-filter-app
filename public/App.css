@@ -1,0 +1,202 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #fff5e4;
+  font-family: "Montserrat", sans-serif;
+  flex-wrap: wrap;
+  font-family: cousine, consolas;
+}
+
+.App {
+  text-align: center;
+  padding-left: 13%;
+  padding-right: 15%;
+}
+
+/* heading */
+.app-heading {
+  min-height: 50px;
+  font-size: calc(10px + 2vmin);
+  padding: 50px 0 30px;
+}
+
+/* filter engine */
+/* searchbar */
+.search-bar {
+  border-color: #888888;
+  display: inline-block;
+  margin: 15px 0 5px;
+  margin-right: 5px;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+}
+
+.search-bar form input {
+  border: 0;
+  outline: none;
+}
+
+.search-icon {
+  border: 0;
+}
+
+/* filter bar */
+/* filter by cuisine */
+.filter-bar {
+  padding: 8px 8px 4px;
+  display: flex;
+  margin: 10px 40px 0;
+}
+
+.filter-boxes {
+  border-radius: 7px;
+  background: #ff9494;
+  padding: 6px 7px;
+  margin: 5px;
+  border: 0;
+}
+
+/* filter by price */
+.lower-container {
+  margin: 10px 40px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.price-checkbox input {
+  margin: 5px;
+}
+
+.price-alert-appear {
+  display: flex;
+  align-content: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.price-alert-disappear {
+  visibility: hidden;
+  flex: 1;
+  justify-content: center;
+}
+
+#price-container {
+  display: flex;
+  flex: 2;
+}
+
+.price-btn-container {
+  display: flex;
+  padding: 0px 15px;
+}
+
+.tooltip-empty {
+  margin: 0;
+  padding: 0;
+}
+
+.price-button {
+  margin: 5px;
+  flex-direction: row;
+  padding: 6px 7px;
+  border-style: solid;
+  border-color: #ff9494;
+  border-width: 0.5px 0.5px 0.5px 0.5px;
+  border-radius: 7px;
+  color: #ff9494;
+}
+
+.price-button:hover {
+  border-style: solid;
+  border-color: #ff9494;
+  border-width: 0.5px 0.5px 0.5px 0.5px;
+  border-radius: 7px;
+  color: #ff9494;
+  background-color: #fff5e4;
+}
+
+.clicked {
+  background-color: #ff9494;
+  color: #fff5e4;
+  margin: 5px;
+  flex-direction: row;
+  padding: 6px 7px;
+  border-radius: 7px;
+  border: solid;
+  border-color: #fff5e4;
+  border-width: 0.5px 0.5px 0.5px 0.5px;
+}
+
+/* filter by visited */
+#visited-container {
+  display: flex;
+  justify-content: center;
+  flex: 2;
+}
+
+.visited-checkbox {
+  margin: 5px;
+  flex-direction: row;
+  padding: 6px 7px;
+  align-self: flex-end;
+}
+
+/* body */
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  max-height: fit-content;
+  width: 300px;
+  margin: 15px 15px;
+  text-align: left;
+}
+
+.card-img {
+  max-width: 100%;
+  overflow-y: hidden;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+.place-name,
+.location,
+.filter-tags {
+  background-color: white;
+}
+
+.place-name {
+  font-size: larger;
+}
+
+.location {
+  color: rgb(141, 137, 137);
+}
+
+.filter-tags {
+  display: flex;
+}
+
+.cuisine,
+.price {
+  justify-content: baseline;
+  border-radius: 7px;
+
+  padding: 4px;
+  margin: 5px 5px 5px 0;
+  width: fit-content;
+}
+
+.cuisine {
+  background: #ff9494;
+}
+
+.price {
+  background: #ffccc8;
+}
