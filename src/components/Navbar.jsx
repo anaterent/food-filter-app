@@ -1,18 +1,18 @@
-import { Data } from "../data/Data";
+import Data from "../data/data";
 
 import Form from 'react-bootstrap/Form';
 
 import PriceButton from "./PriceButton";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
 function Navbar(props) {
 
-    var poiDatas = Data;
-    let spreadData = poiDatas.map((poidata) => {
-        return poidata.cuisine;
+    var placeDatas = Data;
+    let spreadData = placeDatas.map((placeData) => {
+        return placeData.cuisine;
     }
     );
 
@@ -38,24 +38,25 @@ function Navbar(props) {
         }
     ];
 
-    const currentPriceState = props.priceState.toString();
 
     const [priceAlertState, setPriceAlertState] = useState("price-alert-appear");
     function updatePriceAlertState() {
-        if (currentPriceState.includes('$') && currentPriceState.includes('$$') && currentPriceState.includes('$$$') && currentPriceState.includes('$$$$')) {
+        if (props.fullPrice.every((element) => props.priceState.includes(element))) {
             setPriceAlertState("price-alert-appear");
         } else {
             setPriceAlertState("price-alert-disappear");
         }
     }
+    // re-render on change
+    useEffect(() => {
+        updatePriceAlertState();
+      });
 
 
     return (
         <>
             {/* filterbar */}
             <div className="filter-bar" >
-
-
                 <button className="filter-boxes" onClick={props.cChangeHandle}>All</button>
                 {uniqueCuisine.map((cuisine) => (
                     <>
@@ -64,9 +65,7 @@ function Navbar(props) {
                             {cuisine}
                         </button>
                     </>
-
                 ))}
-
 
             </div>
 
@@ -76,19 +75,15 @@ function Navbar(props) {
                 <div className={priceAlertState}>All prices selected</div>
 
                 <div id="price-container">
-                    {/* <PriceButton pChangeHandle={props.pChangeHandle} sign="Any"  /> */}
                     {prices.map((price) => (
                         <PriceButton pChangeHandle={props.pChangeHandle} sign={price.sign} explanation={price.explanation} priceState={props.priceState} updatePriceAlertState={updatePriceAlertState} />
                     ))}
                 </div>
 
 
-
-
                 {/* visited bar */}
                 <div id="visited-container">
                     <Form>
-
                         <div className="visited-checkbox">
                             <Form.Switch
                                 label='Show visited places?'

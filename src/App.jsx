@@ -33,7 +33,8 @@ function App() {
     setPriceState(prevState => ([...prevState, p]))
   }
 
-  const [priceState, setPriceState] = useState(["$", "$$", "$$$", "$$$$"]);
+  const fullPrice = ["$", "$$", "$$$", "$$$$"];
+  const [priceState, setPriceState] = useState(fullPrice);
   function updatePriceState(p) {
     if (priceState.includes(p.target.innerText)) {
       if (priceState.length >= 2) {
@@ -44,7 +45,6 @@ function App() {
     }
   }
 
-  const priceStateString = priceState.toString();
 
 
   return (
@@ -57,13 +57,10 @@ function App() {
           <Search changeHandle={inputHandler} />
         </div>
 
-        <Navbar cChangeHandle={updateCuisineState} pChangeHandle={updatePriceState} priceState={priceStateString} />
-
-        {/* testing */}
-        <div>{priceState.toString()}</div>
+        <Navbar cChangeHandle={updateCuisineState} pChangeHandle={updatePriceState} priceState={priceState} fullPrice={fullPrice}/>
 
         <div className='body'>
-          <Card input={inputText} cuisineState={cuisineState} priceState={priceStateString} />
+          <Card input={inputText} cuisineState={cuisineState} priceState={priceState} fullPrice={fullPrice}/>
         </div>
 
 

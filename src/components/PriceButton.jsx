@@ -13,7 +13,6 @@ function PriceButton(props) {
             } else {
                 setColorClass("price-button")
             }
-            // colorClass === "price-button" ? setColorClass("clicked") : setColorClass("price-button");
         } else {
             setColorClass("clicked")
         }

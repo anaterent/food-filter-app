@@ -158,7 +158,8 @@
   text-align: left;
 }
 
-.card-img {
+
+.card-img-overload {
   max-width: 100%;
   overflow-y: hidden;
   object-fit: cover;
